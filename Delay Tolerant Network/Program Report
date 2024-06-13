@@ -1,0 +1,47 @@
+Design overview:
+-
+My program functions by having the anchor nodes send out beacon messages every 5
+seconds containing the beacon's address and the destinations of stored frames.
+-
+The frames are stored in a circular buffer where the oldest stored frame gets overwritten
+by the newest if the buffer is full.
+-
+When a frame is received, a number of checks are run.
+-
+If a mobile node receives a beacon message, it stores which anchor sent it and
+at what time they received it to keep track of nearby anchor nodes.
+-
+If an anchor node receives a download request, it attempts to send all stored
+frames destined for the requesting node. If no stored frames are found for the
+requesting node it prints that the requested data was probably overwritten and
+sends nothing.-
+If a mobile node receives a beacon message and its address is in the list of
+destinations stored by the anchor, it sends a request to download said data.
+-
+If the destination of a frame is the current node, it increments stats and prints
+received.
+-
+If the receiving node is a mobile node, and the frame is destined for another
+mobile node, and the current node can reach an anchor node, it retransmits the
+frame to the anchor IF it has not yet already seen that frame.
+-
+The anchor node stores all non-beacon frames it receives that are destined for a
+mobile node if there is not already a frame with the same source and destination
+in storage.
+-
+Each mobile node keeps track of when they last heard from each anchor node, and if
+they haven’t heard from an anchor in 2*BEACON_INTERVAL, they remove that anchor
+from their list of reachable anchor nodes.
+-
+The frames also have a ‘seenby’ list that each node updates when they retransmit it.
+This serves to stop a node retransmitting frames it has already transmitted before.
+Project status:
+The program seems to be working, however there are some potential issues. The first is
+that an anchor only stores a frame if a frame with the same source and destination is not
+already in storage. This helps to cut down on duplicate retransmissions but may mean
+that some legitimate frames do not get stored. Additionally I encountered a lot of difficulty
+with the storage of frames in general and while I think the mechanism works, it might not
+be behaving exactly as anticipated. One other potential design issue is that mobile
+nodes simply retransmit messages they receive if they are in range of an anchor, this
+can lead to many duplicate transmissions if the intended node was already in range of
+the initial transmission
