@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "915609491786",
+    "project_id": "qrcodepursuit",
+    "storage_bucket": "qrcodepursuit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915609491786:android:30d8330adac9e8f0d949b3",
+        "android_client_info": {
+          "package_name": "com.team33.qrcodepursuit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "915609491786-cqc8m4m42isfbetmvshbhin1gkhj0tt0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9VDln2hMZuwo2qzT-EGtXW616jz6g7pU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "915609491786-cqc8m4m42isfbetmvshbhin1gkhj0tt0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

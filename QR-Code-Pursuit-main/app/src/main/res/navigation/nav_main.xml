@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/bottomnavigation_menu_home">
+
+    <fragment
+        android:id="@+id/bottomnavigation_menu_home"
+        android:name="com.team33.qrcodepursuit.activities.Home.ScanFragment"
+        android:label="ScanFragment" >
+        <action
+            android:id="@+id/action_scanFragment_to_recieveQRFragment"
+            app:destination="@id/recieveQRFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recieveQRFragment"
+        android:name="com.team33.qrcodepursuit.activities.Home.RecieveQRFragment"
+        android:label="RecieveQRFragment"
+        tools:layout="@layout/fragment_recieveqr"/>
+    <fragment
+        android:id="@+id/bottomnavigation_menu_scoreboard"
+        android:name="com.team33.qrcodepursuit.activities.Scoreboard.ScoreBoardFragment"
+        android:label="fragment_score_board"
+        tools:layout="@layout/fragment_score_board" >
+        <action
+            android:id="@+id/action_bottomnavigation_menu_scoreboard_to_QRScoreBoardFragment"
+            app:destination="@id/QRScoreBoardFragment" />
+        <action
+            android:id="@+id/action_bottomnavigation_menu_scoreboard_to_OtherAccountFragment"
+            app:destination="@id/OtherAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomnavigation_menu_map"
+        android:name="com.team33.qrcodepursuit.activities.Map.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_bottomnavigation_menu_map_to_QRScoreBoardFragment"
+            app:destination="@id/QRScoreBoardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/QRScoreBoardFragment"
+        android:name="com.team33.qrcodepursuit.activities.Scoreboard.QRScoreBoardFragment"
+        android:label="QRScoreBoardFragment" >
+        <action
+            android:id="@+id/action_QRScoreBoardFragment_to_viewQRFragment"
+            app:destination="@id/viewQRFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewQRFragment"
+        android:name="com.team33.qrcodepursuit.activities.Scoreboard.ViewQRFragment"
+        android:label="ViewQRFragment"
+        tools:layout="@layout/fragment_viewqr">
+        <action
+            android:id="@+id/action_viewQRFragment_to_OtherAccountFragment"
+            app:destination="@id/OtherAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bottomnavigation_menu_account"
+        android:name="com.team33.qrcodepursuit.activities.Account.MyAccountFragment"
+        android:label="MyAccount Tab"
+        tools:layout="@layout/fragment_account">
+        <action
+            android:id="@+id/action_bottomnavigation_menu_account_to_generateLoginQRFragment"
+            app:destination="@id/generateLoginQRFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/OtherAccountFragment"
+        android:name="com.team33.qrcodepursuit.activities.Account.OtherAccountFragment"
+        android:label="Other Acount"
+        tools:layout="@layout/fragment_account">
+    </fragment>
+    <fragment
+        android:id="@+id/generateLoginQRFragment"
+        android:name="com.team33.qrcodepursuit.activities.Account.GenerateLoginQRFragment"
+        android:label="GenerateLoginQRFragment" />
+</navigation>

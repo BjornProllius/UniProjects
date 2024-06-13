@@ -1,0 +1,35 @@
+March 25, 2022
+summary:
+- tie halfway point issues so they function together
+- assigning remaining issues
+
+(all) using "navigation components"? (android jetpack)
+- is it worth it? 
+    - maybe for Login, Account, Scan
+    - maybe not for Map, Leaderboard
+- idea: seperate nav graphs for login/home/map/leaderboard/account
+
+(Kevin) GameQR stuff
+- (Kevin) GameQRCode model fleshout; remove actual QR raw data
+    -> QR codes without a photo: use placeholder image
+- (Kevin) how to store images in firestore
+    - as bitstream..? will explore different ways
+    -> or, use Firebase Storage: https://console.firebase.google.com/u/3/project/qrcodepursuit/storage/qrcodepursuit.appspot.com
+- (Kevin) gameQRinfoFragment fragment for when leaderboard/map QR codes are clicked
+    - Comments: GameQRcode doesn't own comments
+    -> just store link sin DB: comments ref[] as a field of QR documents
+    -> pull them on the fly in GameQRinfoFragment
+
+(Jeff) Accounts, Login stuff
+- how to assign QRs to players; what are accounts even
+    - "use custom objects for firestore documents" : https://cloud.google.com/firestore/docs/manage-data/add-data#custom_objects
+    -> (Jeff) just make account class fit into firestore
+    -> (Kevin) on that note, make GameQRcode class the same way to fit into firestore
+- (Jeff) account document identifier as UID (on firestore/Accounts)
+
+(Bjorn) MAP
+    - depends on features: GPS, GameQRinfoFragment
+    
+
+next meeting tuesday (Mar 29)
+above is wrong; next meeting postponed to thursday (March 31)
