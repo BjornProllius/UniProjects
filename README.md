@@ -1,2 +1,2 @@
 # UniProjects
-A collection of projects I completed in university.
+A collection of some of the projects I completed during university.
