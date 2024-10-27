@@ -7,7 +7,7 @@ Delay Tolerant Network: A program that simulates a DTN within the CNET network s
 
 Infromation Retrieval: A couple of programs which search a collection to return relevant documents.
 
-QR-Code-Pursuit: An Andriod application that functions in a mannaer similar to the game 'Pokemon GO' except with QR codes.
+QR-Code-Pursuit: An Andriod application that functions in a manner similar to the game 'Pokemon GO' except with QR codes.
 
 Shared Resource Simulation: A program that simulates a shared resource system with multiple tasks.
 
